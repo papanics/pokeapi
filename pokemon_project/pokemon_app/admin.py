@@ -8,3 +8,5 @@ class Pokemon(admin.ModelAdmin):
     list_filter = ("name", )
     search_fields = ("name__startswith", )
 
+
+

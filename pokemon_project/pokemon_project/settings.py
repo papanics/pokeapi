@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+ADMIN_SITE_HEADER = "POKEAPI"
 # Application definition
 
 INSTALLED_APPS = [
