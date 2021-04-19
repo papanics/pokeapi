@@ -1,0 +1,13 @@
+{% extends 'pokemons/base.html'%}
+{% load static %}
+{% block content %}
+<h1>Create Pokemon</h1>
+<form method="POST">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    
+
+    <button class="btn btn-outline-info" type="submit">Save</button>
+</form>
+{% endblock %}

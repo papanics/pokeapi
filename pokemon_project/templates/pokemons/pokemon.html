@@ -1,0 +1,56 @@
+{% extends 'pokemons/base.html'%}
+{% load static %}
+{% block content %}
+  <div class = "container">
+    <div class = "text-center container">
+      <br>
+      <h2 class = "text-center">Search Pokemon</h2> 
+      <br>
+      <form method="GET">
+        <input type = "text" name = "q" value='{{ request.GET.q }}' placeholder="Search..." class = "text-center">
+        <button type = "submit" class = "btn-outline-info btn-sm">SEARCH POKEMON</button>
+      </form> 
+    </div> 
+    <br><br>
+    <div class="row">
+      {% for pokemon in pokemons %}
+        <div class="col-md-5 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="{{ pokemon.image_url }}" alt="Card image cap">
+            <div class="card-body text-center">
+              <p class="card-title">{{ pokemon.name }}</p>
+              <hr>
+              <p class="card-text">{{ pokemon.url }}</p>
+              <a href="update/{{pokemon.id}}"
+              >
+            <input
+                type="submit"
+                value="Update"
+                class="btn btn-warning btn-sm"
+                type="button"
+            /></a>
+            <a href="delete/{{pokemon.id}}"
+            >
+            <input
+            type="submit"
+            value="Delete"
+            class="btn btn-danger btn-sm"
+            type="button"
+        /></a>
+        <hr>
+        <a href="pokemon/{{pokemon.id}}"
+        >
+        <input
+        type="submit"
+        value="View More"
+        class="btn btn-info btn-sm"
+        type="button"
+        /></a>
+            </div>
+          </div>
+          <br><br><br>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

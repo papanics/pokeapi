@@ -1,0 +1,14 @@
+{% extends 'pokemons/base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Update Pokemon</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.name|as_crispy_field}}
+    {{form.url|as_crispy_field}}
+    <button type="submit" class="btn btn-outline-info" value="Submit">Update</button>
+</form>
+</div>
+{% endblock %}

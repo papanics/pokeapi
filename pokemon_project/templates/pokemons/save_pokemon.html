@@ -1,0 +1,21 @@
+{% extends 'pokemons/base.html'%}
+{% load static %}
+{% block content %}
+  <div class = "container">
+    <div class = "text-center container">
+      <br>
+      <h2 class = "text-center">Pokemon API </h2> 
+      <br>
+      <form method="GET">
+
+            
+                <button class = "btn-info btn-sm" formaction="create">Create new Pokemon</button>
+            
+        or
+           <button type = "submit" name="load" class = "btn-danger btn-sm">Click to load Pokemons from API</button>
+      </form> 
+    </div> 
+    <br><br>
+
+  </div>
+{% endblock %}
